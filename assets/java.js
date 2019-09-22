@@ -21,6 +21,7 @@ $(document).ready(function() {
   var challengeTwo;
   var COyesno;
   var CTyesno;
+  var answers;
 
   var challenges = [
       weekOne = [
@@ -185,13 +186,22 @@ $(document).ready(function() {
         today = 5;
   }
 
+
+$("#logButton").on("click", function(){
+    $(".questions").hide();
+})
+  
+
 $(".logID").on("click", function(){
     user = $(this).attr("id");
+    answers =1;
 })
  
 $(".weekButton").on("click", function(){
     week = $(this).attr("id")
+    answers++
     challengeOne = challenges[0][today].pushups
+    $(".questions").show();
     $("#1stQuestion").text("Did you complete " + challengeOne + " pushups?");
 
     if(today == 3 || 6){
@@ -205,12 +215,22 @@ $(".weekButton").on("click", function(){
 });
 
 $(".logOne").on("click", function(){
-    COyesno = $(this).attr("id")
+    COyesno = $(this).attr("id");
+    answers++
+    if(answers == 4){
+        $("#logSubmit").removeClass("disabled")
+    }
 });
 
 $(".logTwo").on("click", function(){
-    CTyesno = $(this).attr("id")  
-})
+    CTyesno = $(this).attr("id");
+    answers++  
+    if(answers == 4){
+        $("#logSubmit").removeAttr("disabled")
+    }
+});
+
+
     
 $("#logSubmit").on("click", function(){
     database.ref("/" + week + "/" + day + "/" + user + "/challengeOne").set(COyesno);
