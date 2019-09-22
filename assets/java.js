@@ -11,49 +11,131 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth()+1;
-  var yyyy = today.getFullYear();
-  var itsToday = dd + "-" + mm "-" + yyyy;
-  var week;
+  var today = new Date().getDay();
+  var week = "weekOne";
   var user;
   var challengeOne;
   var challengeTwo;
+  var COyesno;
+  var CTyesno;
   var database = firebase.database();
 
-  switch (itsToday){
-    case "23-09-2019" || "24-09-2019" || "25-09-2019" ||
-         "26-09-2019" || "27-09-2019" || "28-09-2019" || "29-09-2019" || "22-09-2019":
-          week = "Week One";
-          break;
+  var challenges = [
+      weekOne = [
+                Monday = {
+                    "pushups": 1,
+                    "squat" : 10
+                },
+                Tuesday = {
+                    "pushups": 1,
+                    "squat" : 10
+                },
+                Wednesday = {
+                    "pushups": 1,
+                    "wallsit" : "0:45"
+                },
+                Thursday = {
+                    "pushups": 2,
+                    "squat" : 15
+                },
+                Friday = {
+                    "pushups": 2,
+                    "squat" : 15
+                },
+                Weekend = {
+                    "pushups": 2,
+                    "wallsit" : "1:00"
+                },
+            ],
 
-    case "30-09-2019" || "01-10-2019" || "02-10-2019" ||
-        "03-10-2019" || "04-10-2019" || "05-10-2019" || "06-10-2019":
-        week = "Week Two";
-        break;
+      weekTwo = [
+                Monday = {
+                        "pushups": 3,
+                        "squat" : 20
+                },
+                Tuesday = {
+                        "pushups": 2,
+                        "squat" : 20
+                },
+                Wednesday = {
+                        "pushups": 3,
+                        "wallsit" : "1:15"
+                },
+                Thursday = {
+                        "pushups": 4,
+                        "squat" : 25
+                },
+                Friday = {
+                        "pushups": 4,
+                        "squat" : 25
+                },
+                Weekend = {
+                        "pushups": 4,
+                        "wallsit" : "1:30"
+                },
+            ],
+    ]
 
-    case "07-10-2019" || "08-10-2019" || "09-10-2019" ||
-        "10-10-2019" || "11-10-2019" || "12-10-2019" || "13-10-2019":
-        week = "Week Three";
-        break;
 
-    case "14-10-2019" || "15-10-2019" || "16-10-2019" ||
-        "17-10-2019" || "18-10-2019" || "19-10-2019" || "20-10-2019":
-       week = "Week Four";
-       break;
-
-    case "21-10-2019" || "22-10-2019" || "23-10-2019" ||
-       "24-10-2019" || "25-10-2019" || "26-10-2019" || "27-10-2019":
-      week = "Week Four";
-      break;
-    
-    default:
-        week = "Week Four"
+  switch (today){
+    case 0:
+    day = "Weekend";
+    today = 5;
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+        day = "Weekend";
+        today = 5;
   }
 
-  database.ref(week + "/" + itsToday).on("value", function(snapshot){
-      
-  })
+$(".logID").on("click", function(){
+    user = $(this).attr("id");
+})
+ 
 
+$(".weekButton").on("click", function(){
+    week = $(this).attr("id")
+    challengeOne = challenges[0][today].pushups
+    $("#1stQuestion").text("Did you complete " + challengeOne + " pushups?");
+
+    if(today == 3 || 6){
+        challengeTwo = challenges[0][today].wallsit
+        $("#2ndQuestion").text("Did you complete " + challengeTwo + " squats?")
+    }else{
+        challengeTwo = challenges[0][today].pushups
+        $("#2ndQuestion").text("Did you complete a " + challengeTwo + " wallsit?")
+    }
+
+});
+
+$(".logOne").on("click", function(){
+    COyesno = $(this).attr("id")
+    
+});
+
+$(".logTwo").on("click", function(){
+    CTyesno = $(this).attr("id")
+    
+})
+    
+$("#logSubmit").on("click", function(){
+    database.ref("/" + week + "/" + day + "/" + user + "/challengeOne").set(COyesno);
+    database.ref("/" + week + "/" + day + "/" + user + "/challengeTwo").set(CTyesno);
+})
+ 
   
+

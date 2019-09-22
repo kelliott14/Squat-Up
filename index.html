@@ -37,10 +37,10 @@
         
         <div class="row">
             <div class="col-md-4">
-                <a type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">Log</a>
+                <a type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id = "logButton">Log</a>
             </div>
             <div class="col-md-4">
-                <a type="button" class="btn btn-primary btn-block" href="#">Look</a>
+                <a type="button" class="btn btn-primary btn-block" href="#" id ="lookButton">Look</a>
             </div>
             <div class="col-md-4">
                 <a type="button" class="btn btn-primary btn-block" href="./locate.html">Locate</a>
@@ -60,23 +60,29 @@
                 <!-- Modal body -->
                 <h3>Log it</h3>
                 <h4 id="identifier">Who are you?</h4>
-                <button type="button" class="btn btn-primary btn-lg" id="idIka">Ika</button>
-                <button type="button" class="btn btn-primary btn-lg" id="idKatie">Katie</button>
-                <button type="button" class="btn btn-primary btn-lg" id="idSoo">Soo</button>
-                <button type="button" class="btn btn-primary btn-lg" id="idWonki">Wonki</button>
+                <button type="button" class="btn btn-primary btn-lg logID" id="Ika">Ika</button>
+                <button type="button" class="btn btn-primary btn-lg logID" id="Katie">Katie</button>
+                <button type="button" class="btn btn-primary btn-lg logID" id="Soo">Soo</button>
+                <button type="button" class="btn btn-primary btn-lg logID" id="Wonki">Wonki</button>
 
-                <h4 id="logDate">It's 24/09/2019,</h4>
-                <h4 id="1stQuestion">Did you complete 10 squats?</h4>
-                <button type="button" class="btn btn-primary btn-lg" id="1qYes">Yes</button>
-                <button type="button" class="btn btn-primary btn-lg" id="1qNo">No</button>
+                <h4 id="logWeek">Which week is it?</h4>
+                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekOne">Week One: 23/09-29/09</button>
+                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekTwo">Week Two: 30/09-06/10</button>
+                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekThree">Week Three: 07/10-13/10</button>
+                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekFour">Week Four: 14/10-20/10</button>
+                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekFive">week Five: 21/10-27/10</button>
 
-                <h4 id="2stQuestion">Did you complete 2 pushups on your toes or 4 on your knees?</h4>
-                <button type="button" class="btn btn-primary btn-lg" id="2qYes">Yes</button>
-                <button type="button" class="btn btn-primary btn-lg" id="2qNo">No</button>
+                <h4 id="1stQuestion"></h4>
+                <button type="button" class="btn btn-primary btn-lg logOne" id="Yes">Yes</button>
+                <button type="button" class="btn btn-primary btn-lg logOne" id="No">No</button>
+
+                <h4 id="2ndQuestion"></h4>
+                <button type="button" class="btn btn-primary btn-lg logTwo" id="Yes">Yes</button>
+                <button type="button" class="btn btn-primary btn-lg logTwo" id="No">No</button>
                 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="logSubmit">Submit</button>
                 </div>
                 
                 </div>
@@ -85,10 +91,10 @@
             
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="./assets/java.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
