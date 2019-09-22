@@ -4,23 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Squat Up</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
-
 </head>
 <body>
-    
-    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Squat Up</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
           
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Look<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="locate.html">Locate</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Squat up, wall-sits?</h1>
+            </div>  
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <a type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">Log</a>
+            </div>
+            <div class="col-md-4">
+                <a type="button" class="btn btn-primary btn-block" href="#">Look</a>
+            </div>
+            <div class="col-md-4">
+                <a type="button" class="btn btn-primary btn-block" href="./locate.html">Locate</a>
+            </div>
+        </div>
+        
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">What you do?</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <h3>Log it</h3>
+                <h4 id="identifier">Who are you?</h4>
+                <button type="button" class="btn btn-primary btn-lg" id="idIka">Ika</button>
+                <button type="button" class="btn btn-primary btn-lg" id="idKatie">Katie</button>
+                <button type="button" class="btn btn-primary btn-lg" id="idSoo">Soo</button>
+                <button type="button" class="btn btn-primary btn-lg" id="idWonki">Wonki</button>
+
+                <h4 id="logDate">It's 24/09/2019,</h4>
+                <h4 id="1stQuestion">Did you complete 10 squats?</h4>
+                <button type="button" class="btn btn-primary btn-lg" id="1qYes">Yes</button>
+                <button type="button" class="btn btn-primary btn-lg" id="1qNo">No</button>
+
+                <h4 id="2stQuestion">Did you complete 2 pushups on your toes or 4 on your knees?</h4>
+                <button type="button" class="btn btn-primary btn-lg" id="2qYes">Yes</button>
+                <button type="button" class="btn btn-primary btn-lg" id="2qNo">No</button>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Submit</button>
+                </div>
+                
+                </div>
+            </div>
+            </div>
+            
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="./assets/java.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
