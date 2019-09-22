@@ -199,16 +199,17 @@ $(".logID").on("click", function(){
  
 $(".weekButton").on("click", function(){
     week = $(this).attr("id")
+    console.log(week)
     answers++
-    challengeOne = challenges[0][today].pushups
+    challengeOne = challenges[week][today].pushups
     $(".questions").show();
     $("#1stQuestion").text("Did you complete " + challengeOne + " pushups?");
 
     if(today == 3 || 6){
-        challengeTwo = challenges[0][today].wallsit
+        challengeTwo = challenges[week][today].wallsit
         $("#2ndQuestion").text("Did you complete " + challengeTwo + " wall-sit?")
     }else{
-        challengeTwo = challenges[0][today].pushups
+        challengeTwo = challenges[week][today].pushups
         $("#2ndQuestion").text("Did you complete a " + challengeTwo + " squats?")
     }
 
