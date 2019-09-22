@@ -196,10 +196,10 @@ $(".weekButton").on("click", function(){
 
     if(today == 3 || 6){
         challengeTwo = challenges[0][today].wallsit
-        $("#2ndQuestion").text("Did you complete " + challengeTwo + " squats?")
+        $("#2ndQuestion").text("Did you complete " + challengeTwo + " wall-sit?")
     }else{
         challengeTwo = challenges[0][today].pushups
-        $("#2ndQuestion").text("Did you complete a " + challengeTwo + " wallsit?")
+        $("#2ndQuestion").text("Did you complete a " + challengeTwo + " squats?")
     }
 
 });

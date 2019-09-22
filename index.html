@@ -10,16 +10,18 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Squat Up</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
           
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="./look.html">Look<span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./look.html">Look</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="locate.html">Locate</a>
@@ -31,19 +33,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Squat up, wall-sits?</h1>
+                <h1>Squat up?</h1>
             </div>  
         </div>
         
         <div class="row">
             <div class="col-md-4">
-                <a type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id = "logButton">Log</a>
+                <a type="button" class="btn LLButtons btn-block" href="#" data-toggle="modal" data-target="#myModal" id = "logButton">Log</a>
             </div>
             <div class="col-md-4">
-                <a type="button" class="btn btn-primary btn-block" href="look.html" id ="lookButton">Look</a>
+                <a type="button" class="btn LLButtons btn-block" href="look.html" id ="lookButton">Look</a>
             </div>
             <!-- <div class="col-md-4">
-                <a type="button" class="btn btn-primary btn-block" href="./locate.html">Locate</a>
+                <a type="button" class="btn LLButtons btn-block" href="./locate.html">Locate</a>
             </div> -->
         </div>
         
@@ -53,32 +55,31 @@
                 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">What you do?</h4>
+                    <h4 class="modal-title">Log it</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 
                 <!-- Modal body -->
-                <h3>Log it</h3>
                 <h4 id="identifier">Who are you?</h4>
-                <button type="button" class="btn btn-primary btn-lg logID" id="Ika">Ika</button>
-                <button type="button" class="btn btn-primary btn-lg logID" id="Katie">Katie</button>
-                <button type="button" class="btn btn-primary btn-lg logID" id="Soo">Soo</button>
-                <button type="button" class="btn btn-primary btn-lg logID" id="Wonki">Wonki</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Ika">Ika</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Katie">Katie</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Soo">Soo</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Wonki">Wonki</button>
 
                 <h4 id="logWeek">Which week is it?</h4>
-                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekOne">Week One: 23/09-29/09</button>
-                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekTwo">Week Two: 30/09-06/10</button>
-                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekThree">Week Three: 07/10-13/10</button>
-                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekFour">Week Four: 14/10-20/10</button>
-                <button type="button" class="btn btn-primary btn-lg weekButton" id="weekFive">week Five: 21/10-27/10</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton" id="weekOne">Week One: 23/09 - 29/09</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton" id="weekTwo">Week Two: 30/09 - 06/10</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton" id="weekThree">Week Three: 07/10 - 13/10</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton" id="weekFour">Week Four: 14/10 - 20/10</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton" id="weekFive">week Five: 21/10 - 27/10</button>
 
                 <h4 id="1stQuestion"></h4>
-                <button type="button" class="btn btn-primary btn-lg logOne" id="Yes">Yes</button>
-                <button type="button" class="btn btn-primary btn-lg logOne" id="No">No</button>
+                <button type="button" data-toggle="button" aria-pressed="false"  class="btn btn-lg logOne" id="Yes">Yes</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logOne" id="No">No</button>
 
                 <h4 id="2ndQuestion"></h4>
-                <button type="button" class="btn btn-primary btn-lg logTwo" id="Yes">Yes</button>
-                <button type="button" class="btn btn-primary btn-lg logTwo" id="No">No</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logTwo" id="Yes">Yes</button>
+                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logTwo" id="No">No</button>
                 
                 <!-- Modal footer -->
                 <div class="modal-footer">
