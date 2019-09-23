@@ -22,6 +22,7 @@ $(document).ready(function() {
   var COyesno;
   var CTyesno;
   var answers;
+  var dbRef;
 
   var challenges = [
       weekOne = [
@@ -199,7 +200,26 @@ $(".logID").on("click", function(){
  
 $(".weekButton").on("click", function(){
         var i = today -1;
-    week = $(this).attr("id")
+    week = $(this).attr("id");
+
+    switch (week){
+        case "0":
+        dbRef = "weekOne"
+        break;
+        case "1":
+        dbRef = "weekTwo"
+        break;
+        case "2":
+        dbRef = "weekThree"
+        break;
+        case "3":
+        dbRef = "weekFour"
+        break;
+        case "4":
+        dbRef = "weekFive"
+        break;
+        }
+        
     answers++
     challengeOne = challenges[week][i].pushups
 
@@ -240,9 +260,9 @@ $(".logTwo").on("click", function(){
 
 
     
-$("#logSubmit").on("click", function(){
-    database.ref("/" + week + "/" + day + "/" + user + "/challengeOne").set(COyesno);
-    database.ref("/" + week + "/" + day + "/" + user + "/challengeTwo").set(CTyesno);
+$("#logSubmit").on("click", function(){             
+    database.ref("/" + dbRef + "/" + day + "/" + user + "/challengeOne").set(COyesno);
+    database.ref("/" + dbRef + "/" + day + "/" + user + "/challengeTwo").set(CTyesno);
 })
  
 
