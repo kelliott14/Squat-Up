@@ -164,7 +164,7 @@ $(document).ready(function() {
   switch (today){
     case 0:
     day = "Weekend";
-    today = 5;
+    today = 6;
     break;
   case 1:
     day = "Monday";
@@ -183,7 +183,7 @@ $(document).ready(function() {
     break;
   case 6:
         day = "Weekend";
-        today = 5;
+        today = 6;
   }
 
 
@@ -198,9 +198,10 @@ $(".logID").on("click", function(){
 })
  
 $(".weekButton").on("click", function(){
+        var i = today -1;
     week = $(this).attr("id")
     answers++
-    challengeOne = challenges[week][today].pushups
+    challengeOne = challenges[week][i].pushups
 
     $(".questions").show();
 
@@ -211,11 +212,11 @@ $(".weekButton").on("click", function(){
 
     }
 
-    if((today == 3) || (today == 5)){
-        challengeTwo = challenges[week][today].wallsit
+    if((today == 3) || (today == 6)){
+        challengeTwo = challenges[week][i].wallsit
         $("#2ndQuestion").text("Did you complete " + challengeTwo + " wall-sit?")
     }else{
-        challengeTwo = challenges[week][today].squat
+        challengeTwo = challenges[week][i].squat
         $("#2ndQuestion").text("Did you complete " + challengeTwo + " squats?")
     }
 
