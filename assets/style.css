@@ -1,20 +1,44 @@
 body{
-    background-color: #FFC928;
+    background-color: #5C7AFF;
+}
+
+.weekOne,
+.weekOneHeader{
+    background-color: #FFC929;
+}
+
+.weekTwo,
+.weekTwoHeader{
+    background-color: #5C7AFF;
+    color: white;
+}
+
+.yes{
+    background-color: #14B358;
+}
+
+.NA{
+    background-color: transparent;
+    color: #FFC929;
+}
+
+.no{
+    background-color: #FFC929
 }
 
 .navbar{
-    background-color: #F9A825;
-    color: #DC4647;
+    background-color: transparent;
+    color: white;
 }
 
 .nav-link{
-    color: #DC4647;
+    color: white;
 }
 
 .LLButtons,
 #logbutton{
-    background-color:   #008A7A;
-    color: white;
+    background-color:   white;
+    color: black;
     margin-bottom: 10px;
     text-decoration: none;
 }
@@ -29,10 +53,10 @@ body{
 .weekButton,
 .logOne,
 .logTwo{
-    background-color:  #008A7A;
+    background-color:  #997C6B;
     color: white;
     margin: 5px;
-    border-color: #7CB242;  
+    border-color: #FF5D4D;  
 }
 
 .logID:not(:disabled):not(.disabled).active,
@@ -43,12 +67,12 @@ body{
 .logOne:not(:disabled):not(.disabled):active,
 .logTwo:not(:disabled):not(.disabled).active,
 .logTwo:not(:disabled):not(.disabled):active{
-    background-color: #7CB242;
+    background-color: #FF5D4D;
 }
 
 h1{
     margin: 20px 0 30px 0;
-    color: #DC4647;
+    color: #FFC929;
 }
 
 h4{

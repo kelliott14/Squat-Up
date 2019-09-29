@@ -262,8 +262,9 @@ $(".logTwo").on("click", function(){
     
 $("#logSubmit").on("click", function(){             
     database.ref("/" + dbRef + "/" + day + "/" + user + "/challengeOne").set(COyesno);
-    database.ref("/" + dbRef + "/" + day + "/" + user + "/challengeTwo").set(CTyesno);
+    database.ref("/" + dbRef + "/" + day + "/" + user + "/challengeTwo").set(CTyesno);    
 })
+
  
 
 database.ref().on("value", function(snapshot){
@@ -320,8 +321,60 @@ database.ref().on("value", function(snapshot){
     $("#WonkiW1WEC1").text(snapshot.val().weekOne.Weekend.Wonki.challengeOne)
     $("#WonkiW1WEC2").text(snapshot.val().weekOne.Weekend.Wonki.challengeTwo)
 
+    $("#IkaW2MC1").text(snapshot.val().weekTwo.Monday.Ika.challengeTwo)
+    $("#IkaW2MC2").text(snapshot.val().weekTwo.Monday.Ika.challengeTwo)
+    $("#IkaW2TuC1").text(snapshot.val().weekTwo.Tuesday.Ika.challengeTwo)
+    $("#IkaW2TuC2").text(snapshot.val().weekTwo.Tuesday.Ika.challengeTwo)
+    $("#IkaW2WC1").text(snapshot.val().weekTwo.Wednesday.Ika.challengeTwo)
+    $("#IkaW2WC2").text(snapshot.val().weekTwo.Wednesday.Ika.challengeTwo)
+    $("#IkaW2ThC1").text(snapshot.val().weekTwo.Thursday.Ika.challengeTwo)
+    $("#IkaW2ThC2").text(snapshot.val().weekTwo.Thursday.Ika.challengeTwo)
+    $("#IkaW2FC1").text(snapshot.val().weekTwo.Friday.Ika.challengeTwo)
+    $("#IkaW2FC2").text(snapshot.val().weekTwo.Friday.Ika.challengeTwo)
+    $("#IkaW2WEC1").text(snapshot.val().weekTwo.Weekend.Ika.challengeTwo)
+    $("#IkaW2WEC2").text(snapshot.val().weekTwo.Weekend.Ika.challengeTwo)
+    
+    $("#KatieW2MC1").text(snapshot.val().weekTwo.Monday.Katie.challengeTwo)
+    $("#KatieW2MC2").text(snapshot.val().weekTwo.Monday.Katie.challengeTwo)
+    $("#KatieW2TuC1").text(snapshot.val().weekTwo.Tuesday.Katie.challengeTwo)
+    $("#KatieW2TuC2").text(snapshot.val().weekTwo.Tuesday.Katie.challengeTwo)
+    $("#KatieW2WC1").text(snapshot.val().weekTwo.Wednesday.Katie.challengeTwo)
+    $("#KatieW2WC2").text(snapshot.val().weekTwo.Wednesday.Katie.challengeTwo)
+    $("#KatieW2ThC1").text(snapshot.val().weekTwo.Thursday.Katie.challengeTwo)
+    $("#KatieW2ThC2").text(snapshot.val().weekTwo.Thursday.Katie.challengeTwo)
+    $("#KatieW2FC1").text(snapshot.val().weekTwo.Friday.Katie.challengeTwo)
+    $("#KatieW2FC2").text(snapshot.val().weekTwo.Friday.Katie.challengeTwo)
+    $("#KatieW2WEC1").text(snapshot.val().weekTwo.Weekend.Katie.challengeTwo)
+    $("#KatieW2WEC2").text(snapshot.val().weekTwo.Weekend.Katie.challengeTwo)
 
+    $("#SooW2MC1").text(snapshot.val().weekTwo.Monday.Soo.challengeTwo)
+    $("#SooW2MC2").text(snapshot.val().weekTwo.Monday.Soo.challengeTwo)
+    $("#SooW2TuC1").text(snapshot.val().weekTwo.Tuesday.Soo.challengeTwo)
+    $("#SooW2TuC2").text(snapshot.val().weekTwo.Tuesday.Soo.challengeTwo)
+    $("#SooW2WC1").text(snapshot.val().weekTwo.Wednesday.Soo.challengeTwo)
+    $("#SooW2WC2").text(snapshot.val().weekTwo.Wednesday.Soo.challengeTwo)
+    $("#SooW2ThC1").text(snapshot.val().weekTwo.Thursday.Soo.challengeTwo)
+    $("#SooW2ThC2").text(snapshot.val().weekTwo.Thursday.Soo.challengeTwo)
+    $("#SooW2FC1").text(snapshot.val().weekTwo.Friday.Soo.challengeTwo)
+    $("#SooW2FC2").text(snapshot.val().weekTwo.Friday.Soo.challengeTwo)
+    $("#SooW2WEC1").text(snapshot.val().weekTwo.Weekend.Soo.challengeTwo)
+    $("#SooW2WEC2").text(snapshot.val().weekTwo.Weekend.Soo.challengeTwo)
 
+    $("#WonkiW2MC1").text(snapshot.val().weekTwo.Monday.Wonki.challengeTwo)
+    $("#WonkiW2MC2").text(snapshot.val().weekTwo.Monday.Wonki.challengeTwo)
+    $("#WonkiW2TuC1").text(snapshot.val().weekTwo.Tuesday.Wonki.challengeTwo)
+    $("#WonkiW2TuC2").text(snapshot.val().weekTwo.Tuesday.Wonki.challengeTwo)
+    $("#WonkiW2WC1").text(snapshot.val().weekTwo.Wednesday.Wonki.challengeTwo)
+    $("#WonkiW2WC2").text(snapshot.val().weekTwo.Wednesday.Wonki.challengeTwo)
+    $("#WonkiW2ThC1").text(snapshot.val().weekTwo.Thursday.Wonki.challengeTwo)
+    $("#WonkiW2ThC2").text(snapshot.val().weekTwo.Thursday.Wonki.challengeTwo)
+    $("#WonkiW2FC1").text(snapshot.val().weekTwo.Friday.Wonki.challengeTwo)
+    $("#WonkiW2FC2").text(snapshot.val().weekTwo.Friday.Wonki.challengeTwo)
+    $("#WonkiW2WEC1").text(snapshot.val().weekTwo.Weekend.Wonki.challengeTwo)
+    $("#WonkiW2WEC2").text(snapshot.val().weekTwo.Weekend.Wonki.challengeTwo)
+
+    
+    
 })
 
 })
