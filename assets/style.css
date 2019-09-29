@@ -37,10 +37,14 @@ body{
 
 .LLButtons,
 #logbutton{
-    background-color:   white;
-    color: black;
+    background-color:   #A314B3;
+    color: white;
     margin-bottom: 10px;
     text-decoration: none;
+}
+
+.buttonRow{
+    margin-top: 20px;
 }
 
 #myModal{
