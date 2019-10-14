@@ -1,5 +1,5 @@
 body{
-    background-color: #14B358;
+    background-color: #FF2F1C;
 }
 
 .weekOne,
@@ -16,6 +16,12 @@ body{
 .weekThree,
 .weekThreeHeader{
     background-color: #14B358;
+    color: white;
+}
+
+.weekFour,
+.weekFourHeader{
+    background-color: #FF2F1C;
     color: white;
 }
 
@@ -43,7 +49,7 @@ body{
 
 .LLButtons,
 #logbutton{
-    background-color:   #A31477;
+    background-color:   #0260CC;
     color: white;
     margin-bottom: 10px;
     text-decoration: none;
@@ -63,10 +69,10 @@ body{
 .weekButton,
 .logOne,
 .logTwo{
-    background-color:  #997BA5;
+    background-color:  #FF0FBB;
     color: white;
     margin: 5px;
-    border-color: #FF5B6F;  
+    border-color: #A7FF4F;  
 }
 
 .logID:not(:disabled):not(.disabled).active,
@@ -77,12 +83,12 @@ body{
 .logOne:not(:disabled):not(.disabled):active,
 .logTwo:not(:disabled):not(.disabled).active,
 .logTwo:not(:disabled):not(.disabled):active{
-    background-color: #FF5B6F;
+    background-color: #A7FF4F;
 }
 
 h1{
     margin: 20px 0 30px 0;
-    color: #FFC9D8;
+    color: #400C07;
 }
 
 h4{
