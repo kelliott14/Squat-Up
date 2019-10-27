@@ -14,7 +14,8 @@ $(document).ready(function() {
 
   var database = firebase.database();
 
-  var today = new Date().getDay();
+  var day = moment().format('dddd');
+  var date = moment().format("YYYYMMDD")
   var week;
   var user;
   var challengeOne;
@@ -24,250 +25,233 @@ $(document).ready(function() {
   var answers;
   var dbRef;
 
+    var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Weekend"]
+    var weeks = ["Week One", "Week Two", "Week Three", "Week Four", "Week Five"]
+    var players = ["Ika", "Katie", "Soo", "Wonki"]
+
   var challenges = [
       weekOne = [
                 Monday = {
-                    "pushups": 1,
-                    "squat" : 10
+                    "pushups": 5,
+                    "walking planks" : 5,
+                    "squats": 8
                 },
                 Tuesday = {
-                    "pushups": 1,
-                    "squat" : 10
+                    "pushups": 5,
+                    "reverse crunch" : 5,
+                    "lunges": 8
                 },
                 Wednesday = {
-                    "pushups": 1,
-                    "wallsit" : "0:45"
+                    "pushups": 5,
+                    "plank" : "1:00",
+                    "jump squats": 4
                 },
                 Thursday = {
-                    "pushups": 2,
-                    "squat" : 15
+                    "pushups": 5,
+                    "leg raises" : 5,
+                    "side lunges": 8
                 },
                 Friday = {
-                    "pushups": 2,
-                    "squat" : 15
+                    "pushups": 5,
+                    "mountain climbers" : 5,
+                    "sumo squats": 8
                 },
                 Weekend = {
-                    "pushups": 2,
-                    "wallsit" : "1:00"
+                    "pushups": 5,
+                    "russian twists" : 5,
+                    "wall-sit": "1:30"
                 },
             ],
 
       weekTwo = [
                 Monday = {
-                        "pushups": 3,
-                        "squat" : 20
+                    "pushups": 5,
+                    "walking planks" : 10,
+                    "squats": 16
                 },
                 Tuesday = {
-                        "pushups": 2,
-                        "squat" : 20
+                    "pushups": 5,
+                    "reverse crunch" : 10,
+                    "lunges": 16
                 },
                 Wednesday = {
-                        "pushups": 3,
-                        "wallsit" : "1:15"
+                    "pushups": 5,
+                    "plank" : "1:15",
+                    "jump squats": 8
                 },
                 Thursday = {
-                        "pushups": 4,
-                        "squat" : 25
+                    "pushups": 5,
+                    "leg raises" : 10,
+                    "side lunges": 16
                 },
                 Friday = {
-                        "pushups": 4,
-                        "squat" : 25
+                    "pushups": 5,
+                    "mountain climbers" : 10,
+                    "sumo squats": 16
                 },
                 Weekend = {
-                        "pushups": 4,
-                        "wallsit" : "1:30"
+                    "pushups": 5,
+                    "russian twists" : 10,
+                    "wall-sit": "1:45"
                 },
             ],
 
         weekThree = [
             Monday = {
-                    "pushups": 5,
-                    "squat" : 30
+                "pushups": 5,
+                "walking planks" : 15,
+                "squats": 24
             },
             Tuesday = {
-                    "pushups": 5,
-                    "squat" : 30
+                "pushups": 5,
+                "reverse crunch" : 15,
+                "lunges": 24
             },
             Wednesday = {
-                    "pushups": 5,
-                    "wallsit" : "1:45"
+                "pushups": 5,
+                "plank" : "1:30",
+                "jump squats": 12
             },
             Thursday = {
-                    "pushups": 6,
-                    "squat" : 35
+                "pushups": 5,
+                "leg raises" : 15,
+                "side lunges": 24
             },
             Friday = {
-                    "pushups": 6,
-                    "squat" : 35
+                "pushups": 5,
+                "mountain climbers" : 15,
+                "sumo squats": 24
             },
             Weekend = {
-                    "pushups": 6,
-                    "wallsit" : "2:00"
+                "pushups": 5,
+                "russian twists" : 15,
+                "wall-sit": "2:00"
             },
         ],
 
         weekFour = [
             Monday = {
-                    "pushups": 7,
-                    "squat" : 40
+                "pushups": 5,
+                "walking planks" : 20,
+                "squats": 32
             },
             Tuesday = {
-                    "pushups": 7,
-                    "squat" : 40
+                "pushups": 5,
+                "reverse crunch" : 20,
+                "lunges": 32
             },
             Wednesday = {
-                    "pushups": 7,
-                    "wallsit" : "2:15"
+                "pushups": 5,
+                "plank" : "1:45",
+                "jump squats": 16
             },
             Thursday = {
-                    "pushups": 8,
-                    "squat" : 45
+                "pushups": 5,
+                "leg raises" : 20,
+                "side lunges": 32
             },
             Friday = {
-                    "pushups": 8,
-                    "squat" : 45
+                "pushups": 5,
+                "mountain climbers" : 20,
+                "sumo squats": 32
             },
             Weekend = {
-                    "pushups": 8,
-                    "wallsit" : "2:30"
+                "pushups": 5,
+                "russian twists" : 20,
+                "wall-sit": "2:15"
             },
         ],
     
         weekFive = [
             Monday = {
-                    "pushups": 9,
-                    "squat" : 50
+                "pushups": 5,
+                "walking planks" : 25,
+                "squats": 40
             },
             Tuesday = {
-                    "pushups": 9,
-                    "squat" : 50
+                "pushups": 5,
+                "reverse crunch" : 25,
+                "lunges": 40
             },
             Wednesday = {
-                    "pushups": 9,
-                    "wallsit" : "2:45"
+                "pushups": 5,
+                "plank" : "2:00",
+                "jump squats": 20
             },
             Thursday = {
-                    "pushups": 10,
-                    "squat" : 55
+                "pushups": 5,
+                "leg raises" : 25,
+                "side lunges": 40
             },
             Friday = {
-                    "pushups": 10,
-                    "squat" : 55
+                "pushups": 5,
+                "mountain climbers" : 25,
+                "sumo squats": 40
             },
             Weekend = {
-                    "pushups": 10,
-                    "wallsit" : "3:00"
+                "pushups": 5,
+                "russian twists" : 25,
+                "wall-sit": "2:30"
             },
         ],
     ]
 
+if (day == "Sunday" || "Saturday"){
+    day = "Weekend"
+}
 
-  switch (today){
-    case 0:
-    day = "Weekend";
-    today = 6;
-    break;
-  case 1:
-    day = "Monday";
-    break;
-  case 2:
-     day = "Tuesday";
-    break;
-  case 3:
-    day = "Wednesday";
-    break;
-  case 4:
-    day = "Thursday";
-    break;
-  case 5:
-    day = "Friday";
-    break;
-  case 6:
-        day = "Weekend";
-        today = 6;
-  }
+date = "20191103"
+whichWeek(date)
 
+function whichWeek(date){
+    var wOneDOne = "20191028"
+    var WTwoDOne = "20191104"
+    var WThreeDOne = "20191111"
+    var WFourDOne = "20191118"
+    var WFiveDOne = "20191125"
 
-$("#logButton").on("click", function(){
-    $(".questions").hide();
-})
-  
+    if (date > wOneDOne && date < WTwoDOne){
+        week = "Week One"
+        dbRef = "weekOne"
+    }else if (date > WTwoDOne && date < WThreeDOne){
+        week = "Week Two"
+        dbRef = "weekTwo"
+    }else if (date > WThreeDOne && date < WFourDOne){
+        week = "Week Three"
+        dbRef = "weekThree"
+    }else if (date > WFourDOne && date < WFiveDOne){
+        week = "Week Four"
+        dbRef = "weekFour"
+    }else if (date > WFiveDOne){
+        week = "Week Five"
+        dbRef = "weekFive"
+    }
+
+}
 
 $(".logID").on("click", function(){
     user = $(this).attr("id");
-    answers =1;
+    
 })
  
-$(".weekButton").on("click", function(){
-        var i = today -1;
-    week = $(this).attr("id");
-
-    switch (week){
-        case "0":
-        dbRef = "weekOne"
-        break;
-        case "1":
-        dbRef = "weekTwo"
-        break;
-        case "2":
-        dbRef = "weekThree"
-        break;
-        case "3":
-        dbRef = "weekFour"
-        break;
-        case "4":
-        dbRef = "weekFive"
-        break;
-        }
-        
-    answers++
-    challengeOne = challenges[week][i].pushups
-
-    $(".questions").show();
-
-    if(challengeOne == 1){
-        $("#1stQuestion").text("Did you complete " + challengeOne + " pushup?");  
-    }else{
-        $("#1stQuestion").text("Did you complete " + challengeOne + " pushups?");
-
-    }
-
-    if((today == 3) || (today == 6)){
-        challengeTwo = challenges[week][i].wallsit
-        $("#2ndQuestion").text("Did you complete " + challengeTwo + " wall-sit?")
-    }else{
-        challengeTwo = challenges[week][i].squat
-        $("#2ndQuestion").text("Did you complete " + challengeTwo + " squats?")
-    }
-
-});
-
-$(".logOne").on("click", function(){
-    COyesno = $(this).attr("id");
-    answers++
-    if(answers == 4){
-        $("#logSubmit").removeClass("disabled")
-    }
-});
-
-$(".logTwo").on("click", function(){
-    CTyesno = $(this).attr("id");
-    answers++  
-    if(answers == 4){
-        $("#logSubmit").removeAttr("disabled")
-    }
-});
-
 
     
 $("#logSubmit").on("click", function(){             
-    database.ref("/" + dbRef + "/" + day + "/" + user + "/challengeOne").set(COyesno);
-    database.ref("/" + dbRef + "/" + day + "/" + user + "/challengeTwo").set(CTyesno);    
+    database.ref("/" + dbRef + "/" + day + "/" + user).set(true);  
 })
 
  
+var ref1 = ["weekOne", "weekTwo", "weekThree", "weekFour", "weekFive"]
+var ref2 = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Weekend"]
+var ref3 = ["Ika", "Katie", "Soo", "Wonki"]
 
 database.ref().on("value", function(snapshot){
+    
+    var query = snapshot.val()
+
+    
+    
+    
     //Ika Week One
     $("#IkaW1MC1").text(snapshot.val().weekOne.Monday.Ika.challengeOne)
     $("#IkaW1MC2").text(snapshot.val().weekOne.Monday.Ika.challengeTwo)
@@ -537,4 +521,270 @@ database.ref().on("value", function(snapshot){
     
 })
 
+
+
+//table build
+
+
+//table thead
+var header = $("<thead><tr class=tableHeader</tr><thead");
+
+//a1 empty cell
+$(header).append("<th scope='col'></th>");
+
+//header for each day of the week
+days.forEach(function(item) {
+    var dayHeader = $("<th scope='col'>" + item + "</th>")
+    $(header).append(dayHeader);
+});
+
+//week one row header
+var rowOne = $("<tr><th scope = row rowspan='4'>" + weeks[0] + "</th></tr>")
+
+//Ika week One
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[0].replace(/\s/g, '');
+    $(cell).attr("value", players[0] + thisWeek + days[i])
+    $(rowOne).append(cell)
+}
+
+$(header).append(rowOne)
+$(".roundTwo").append(header)
+
+//Katie week One
+var newRowK1 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[0].replace(/\s/g, '');
+    $(cell).attr("value", players[1] + thisWeek + days[i])
+    $(newRowK1).append(cell)
+}
+
+$(header).append(newRowK1)
+$(".roundTwo").append(header)
+
+//Soo week One
+var newRowS1 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[0].replace(/\s/g, '');
+    $(cell).attr("value", players[2] + thisWeek + days[i])
+    $(newRowS1).append(cell)
+}
+
+$(header).append(newRowS1)
+$(".roundTwo").append(header)
+
+//Wonki week One
+var newRowW1 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[0].replace(/\s/g, '');
+    $(cell).attr("value", players[3] + thisWeek + days[i])
+    $(newRowW1).append(cell)
+}
+
+$(header).append(newRowW1)
+$(".roundTwo").append(header);
+
+//week Two row header
+var rowTwo = $("<tr><th scope = row rowspan='4'>" + weeks[1] + "</th></tr>")
+
+//Ika week Two
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[1].replace(/\s/g, '');
+    $(cell).attr("value", players[0] + thisWeek + days[i])
+    $(rowTwo).append(cell)
+}
+
+$(header).append(rowTwo)
+$(".roundTwo").append(header)
+
+//Katie week Two
+var newRowK2 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[1].replace(/\s/g, '');
+    $(cell).attr("value", players[1] + thisWeek + days[i])
+    $(newRowK2).append(cell)
+}
+
+$(header).append(newRowK2)
+$(".roundTwo").append(header)
+
+//Soo week Two
+var newRowS2 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[1].replace(/\s/g, '');
+    $(cell).attr("value", players[2] + thisWeek + days[i])
+    $(newRowS2).append(cell)
+}
+
+$(header).append(newRowS2)
+$(".roundTwo").append(header)
+
+//Wonki week Two
+var newRowW2 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[1].replace(/\s/g, '');
+    $(cell).attr("value", players[3] + thisWeek + days[i])
+    $(newRowW2).append(cell)
+}
+
+$(header).append(newRowW2)
+$(".roundTwo").append(header)
+
+//week Three row header
+var rowThree = $("<tr><th scope = row rowspan='4'>" + weeks[2] + "</th></tr>")
+
+//Ika week Three
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[2].replace(/\s/g, '');
+    $(cell).attr("value", players[0] + thisWeek + days[i])
+    $(rowThree).append(cell)
+}
+
+$(header).append(rowThree)
+$(".roundTwo").append(header)
+
+//Katie week Three
+var newRowK3 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[2].replace(/\s/g, '');
+    $(cell).attr("value", players[1] + thisWeek + days[i])
+    $(newRowK3).append(cell)
+}
+
+$(header).append(newRowK3)
+$(".roundTwo").append(header)
+
+//Soo week Three
+var newRowS3 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[2].replace(/\s/g, '');
+    $(cell).attr("value", players[2] + thisWeek + days[i])
+    $(newRowS3).append(cell)
+}
+
+$(header).append(newRowS3)
+$(".roundTwo").append(header)
+
+//Wonki week Three
+var newRowW3 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[2].replace(/\s/g, '');
+    $(cell).attr("value", players[3] + thisWeek + days[i])
+    $(newRowW3).append(cell)
+}
+
+$(header).append(newRowW3)
+$(".roundTwo").append(header)
+
+//week Four row header
+var rowFour = $("<tr><th scope = row rowspan='4'>" + weeks[3] + "</th></tr>")
+
+//Ika week Four
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[3].replace(/\s/g, '');
+    $(cell).attr("value", players[0] + thisWeek + days[i])
+    $(rowFour).append(cell)
+}
+
+$(header).append(rowFour)
+$(".roundTwo").append(header)
+
+//Katie week Four
+var newRowK4 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[3].replace(/\s/g, '');
+    $(cell).attr("value", players[1] + thisWeek + days[i])
+    $(newRowK4).append(cell)
+}
+
+$(header).append(newRowK4)
+$(".roundTwo").append(header)
+
+//Soo week Four
+var newRowS4 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[3].replace(/\s/g, '');
+    $(cell).attr("value", players[2] + thisWeek + days[i])
+    $(newRowS4).append(cell)
+}
+
+$(header).append(newRowS4)
+$(".roundTwo").append(header)
+
+//Wonki week Four
+var newRowW4 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[3].replace(/\s/g, '');
+    $(cell).attr("value", players[3] + thisWeek + days[i])
+    $(newRowW4).append(cell)
+}
+
+$(header).append(newRowW4)
+$(".roundTwo").append(header)
+
+//week Five row header
+var rowFive = $("<tr><th scope = row rowspan='4'>" + weeks[3] + "</th></tr>")
+
+//Ika week Four
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[4].replace(/\s/g, '');
+    $(cell).attr("value", players[0] + thisWeek + days[i])
+    $(rowFive).append(cell)
+}
+
+$(header).append(rowFive)
+$(".roundTwo").append(header)
+
+//Katie week Five
+var newRowK5 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[4].replace(/\s/g, '');
+    $(cell).attr("value", players[1] + thisWeek + days[i])
+    $(newRowK5).append(cell)
+}
+
+$(header).append(newRowK5)
+$(".roundTwo").append(header)
+
+//Soo week Four
+var newRowS5 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[4].replace(/\s/g, '');
+    $(cell).attr("value", players[2] + thisWeek + days[i])
+    $(newRowS5).append(cell)
+}
+
+$(header).append(newRowS5)
+$(".roundTwo").append(header)
+
+//Wonki week Four
+var newRowW5 = $("<tr></tr>")
+for (var i = 0; i < days.length; i++){
+    var cell = $("<td class='cell'></td>");
+    var thisWeek = weeks[4].replace(/\s/g, '');
+    $(cell).attr("value", players[3] + thisWeek + days[i])
+    $(newRowW5).append(cell)
+}
+
+$(header).append(newRowW5)
+$(".roundTwo").append(header)
 })

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Squat Up</title>
+    <title>Squat Up: Round 2</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
@@ -29,74 +29,60 @@
             </ul>
         </div>
     </nav>
-
+    
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Squat up?</h1>
-            </div>  
+        
+        <h1>Squat up?</h1>
+        
+        <div class="card todayCard">
+            <div class="card-header">
+                Today is: 28-Oct
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">Week One: Monday</h5>
+                <p class="card-text">Pushups: 5</p>
+                <p class="card-text">Walking Planks: 5</p>
+                <p class="card-text">Squats: 8</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Log it!</a>
+            </div>
         </div>
         
-        <div class="row buttonRow">
-            <div class="col-md-4">
-                <a type="button" class="btn LLButtons btn-block btn-lg" href="#" data-toggle="modal" data-target="#myModal" id = "logButton">Log</a>
-            </div>
-            <div class="col-md-4">
-                <a type="button" class="btn LLButtons btn-block btn-lg" href="look.html" id ="lookButton">Look</a>
-            </div>
-            <!-- <div class="col-md-4">
-                <a type="button" class="btn LLButtons btn-block" href="./locate.html">Locate</a>
-            </div> -->
-        </div>
+        <h2>Completed</h2>
+
+
+        <table class="table table-bordered roundTwo"></table>
         
         <div class="modal" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">
                 
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Log it</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                
-                <!-- Modal body -->
-                <h4 id="identifier">Who are you?</h4>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Ika">Ika</button>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Katie">Katie</button>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Soo">Soo</button>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Wonki">Wonki</button>
-
-                <h4 id="logWeek">Which week is it?</h4>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton disabled" id="0">It's the last week!</button>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton disabled" id="1">We made it!</button>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton disabled" id="2">Yayers!</button>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton disabled" id="3">!!!!</button>
-                <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg weekButton" id="4">Week Five: 21/10 - 27/10</button>
-
-                <div class="questions">
-                    <h4 id="1stQuestion"></h4>
-                    <button type="button" data-toggle="button" aria-pressed="false"  class="btn btn-lg logOne" id="Yes">Yes</button>
-                    <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logOne" id="No">No</button>
-
-                    <h4 id="2ndQuestion"></h4>
-                    <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logTwo" id="Yes">Yes</button>
-                    <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logTwo" id="No">No</button>
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Log it</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
                     
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="logSubmit" disabled>Submit</button>
-                </div>
+                    <!-- Modal body -->
+                    <h4 id="identifier">Who are you?</h4>
+                    <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Ika">Ika</button>
+                    <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Katie">Katie</button>
+                    <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Soo">Soo</button>
+                    <button type="button" data-toggle="button" aria-pressed="false" class="btn btn-lg logID" id="Wonki">Wonki</button>
+                    <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal" id="logSubmit">Submit</button>
                 
                 </div>
             </div>
-            </div>
+        </div>
             
 
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
     <script src="./assets/java.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

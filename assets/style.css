@@ -82,6 +82,10 @@ body{
     border-color: #0FFFC2;  
 }
 
+.btn-danger{
+    margin: 20px;
+}
+
 .logID:not(:disabled):not(.disabled).active,
 .logID:not(:disabled):not(.disabled):active,
 .weekButton:not(:disabled):not(.disabled).active,
