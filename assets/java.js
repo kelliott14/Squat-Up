@@ -200,7 +200,7 @@ if (day == "Sunday" || "Saturday"){
     day = "Weekend"
 }
 
-date = "20191103"
+
 whichWeek(date)
 
 function whichWeek(date){
