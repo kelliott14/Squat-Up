@@ -197,7 +197,7 @@ $(document).ready(function() {
     }else{
         day = moment().format('dddd');
     }
-    console.log(day)
+  
 
 
 whichWeek(date)
@@ -208,7 +208,7 @@ function whichWeek(date){
     var WThreeDOne = "20191111"
     var WFourDOne = "20191118"
     var WFiveDOne = "20191125"
-console.log(date)
+
     if (date >= wOneDOne && date < WTwoDOne){
         week = "Week One"
         dbRef = "weekOne"
@@ -436,7 +436,7 @@ days.forEach(function(item) {
 });
 
 //week one row header
-var rowOne = $("<tr><th scope = row rowspan='4'>" + weeks[0] + "</th></tr>")
+var rowOne = $("<tr><th scope = row rowspan='4' style='vertical-align : middle;text-align:center'>" + weeks[0] + "</th></tr>")
 
 //Ika week One
 for (var i = 0; i < days.length; i++){
@@ -486,7 +486,7 @@ $(header).append(newRowW1)
 $(".roundTwo").append(header);
 
 //week Two row header
-var rowTwo = $("<tr><th scope = row rowspan='4'>" + weeks[1] + "</th></tr>")
+var rowTwo = $("<tr><th scope = row rowspan='4' style='vertical-align : middle;text-align:center'>" + weeks[1] + "</th></tr>")
 
 //Ika week Two
 for (var i = 0; i < days.length; i++){
@@ -536,7 +536,7 @@ $(header).append(newRowW2)
 $(".roundTwo").append(header)
 
 //week Three row header
-var rowThree = $("<tr><th scope = row rowspan='4'>" + weeks[2] + "</th></tr>")
+var rowThree = $("<tr><th scope = row rowspan='4' style='vertical-align : middle;text-align:center'>" + weeks[2] + "</th></tr>")
 
 //Ika week Three
 for (var i = 0; i < days.length; i++){
@@ -586,7 +586,7 @@ $(header).append(newRowW3)
 $(".roundTwo").append(header)
 
 //week Four row header
-var rowFour = $("<tr><th scope = row rowspan='4'>" + weeks[3] + "</th></tr>")
+var rowFour = $("<tr><th scope = row rowspan='4' style='vertical-align : middle;text-align:center'>" + weeks[3] + "</th></tr>")
 
 //Ika week Four
 for (var i = 0; i < days.length; i++){
@@ -636,7 +636,7 @@ $(header).append(newRowW4)
 $(".roundTwo").append(header)
 
 //week Five row header
-var rowFive = $("<tr><th scope = row rowspan='4'>" + weeks[4] + "</th></tr>")
+var rowFive = $("<tr><th scope = row rowspan='4' style='vertical-align : middle;text-align:center'>" + weeks[4] + "</th></tr>")
 
 //Ika week Five
 for (var i = 0; i < days.length; i++){
