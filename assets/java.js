@@ -15,187 +15,189 @@ $(document).ready(function() {
   var database = firebase.database();
 
   var day = moment().format('dddd');
-  console.log(day)
   var date = moment().format("YYYYMMDD")
   var user;
   var dbRef;
 
+  
     var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Weekend"]
     var weeks = ["Week One", "Week Two", "Week Three", "Week Four", "Week Five"]
     var players = ["Ika", "Katie", "Soo", "Wonki"]
 
-  var challenges = [
-      weekOne = [
-                Monday = {
+  var challenges = {
+      "weekOne" : {
+                "Monday" : {
                     "pushups": 5,
                     "walking planks" : 5,
                     "squats": 8
                 },
-                Tuesday = {
+                "Tuesday" : {
                     "pushups": 5,
                     "reverse crunch" : 5,
                     "lunges": 8
                 },
-                Wednesday = {
+                "Wednesday" : {
                     "pushups": 5,
                     "plank" : "1:00",
                     "jump squats": 4
                 },
-                Thursday = {
+                "Thursday" : {
                     "pushups": 5,
                     "leg raises" : 5,
                     "side lunges": 8
                 },
-                Friday = {
+                "Friday" : {
                     "pushups": 5,
                     "mountain climbers" : 5,
                     "sumo squats": 8
                 },
-                Weekend = {
+                "Weekend" : {
                     "pushups": 5,
                     "russian twists" : 5,
                     "wall-sit": "1:30"
                 },
-            ],
-
-      weekTwo = [
-                Monday = {
+        },
+    
+      "weekTwo" : {
+                "Monday" : {
                     "pushups": 5,
                     "walking planks" : 10,
                     "squats": 16
                 },
-                Tuesday = {
+                "Tuesday" : {
                     "pushups": 5,
                     "reverse crunch" : 10,
                     "lunges": 16
                 },
-                Wednesday = {
+                "Wednesday" : {
                     "pushups": 5,
                     "plank" : "1:15",
                     "jump squats": 8
                 },
-                Thursday = {
+                "Thursday" : {
                     "pushups": 5,
                     "leg raises" : 10,
                     "side lunges": 16
                 },
-                Friday = {
+                "Friday" : {
                     "pushups": 5,
                     "mountain climbers" : 10,
                     "sumo squats": 16
                 },
-                Weekend = {
+                "Weekend" : {
                     "pushups": 5,
                     "russian twists" : 10,
                     "wall-sit": "1:45"
                 },
-            ],
+        },
 
-        weekThree = [
-            Monday = {
-                "pushups": 5,
-                "walking planks" : 15,
-                "squats": 24
-            },
-            Tuesday = {
-                "pushups": 5,
-                "reverse crunch" : 15,
-                "lunges": 24
-            },
-            Wednesday = {
-                "pushups": 5,
-                "plank" : "1:30",
-                "jump squats": 12
-            },
-            Thursday = {
-                "pushups": 5,
-                "leg raises" : 15,
-                "side lunges": 24
-            },
-            Friday = {
-                "pushups": 5,
-                "mountain climbers" : 15,
-                "sumo squats": 24
-            },
-            Weekend = {
-                "pushups": 5,
-                "russian twists" : 15,
-                "wall-sit": "2:00"
-            },
-        ],
+        "weekThree" : {
+                "Monday" : {
+                    "pushups": 5,
+                    "walking planks" : 15,
+                    "squats": 24
+                },
+                "Tuesday" : {
+                    "pushups": 5,
+                    "reverse crunch" : 15,
+                    "lunges": 24
+                },
+                "Wednesday" : {
+                    "pushups": 5,
+                    "plank" : "1:30",
+                    "jump squats": 12
+                },
+                "Thursday" : {
+                    "pushups": 5,
+                    "leg raises" : 15,
+                    "side lunges": 24
+                },
+                "Friday" : {
+                    "pushups": 5,
+                    "mountain climbers" : 15,
+                    "sumo squats": 24
+                },
+                "Weekend" : {
+                    "pushups": 5,
+                    "russian twists" : 15,
+                    "wall-sit": "2:00"
+                },
+        },
 
-        weekFour = [
-            Monday = {
-                "pushups": 5,
-                "walking planks" : 20,
-                "squats": 32
-            },
-            Tuesday = {
-                "pushups": 5,
-                "reverse crunch" : 20,
-                "lunges": 32
-            },
-            Wednesday = {
-                "pushups": 5,
-                "plank" : "1:45",
-                "jump squats": 16
-            },
-            Thursday = {
-                "pushups": 5,
-                "leg raises" : 20,
-                "side lunges": 32
-            },
-            Friday = {
-                "pushups": 5,
-                "mountain climbers" : 20,
-                "sumo squats": 32
-            },
-            Weekend = {
-                "pushups": 5,
-                "russian twists" : 20,
-                "wall-sit": "2:15"
-            },
-        ],
-    
-        weekFive = [
-            Monday = {
+        "weekFour" : {
+                "Monday" : {
+                    "pushups": 5,
+                    "walking planks" : 20,
+                    "squats": 32
+                },
+                "Tuesday" : {
+                    "pushups": 5,
+                    "reverse crunch" : 20,
+                    "lunges": 32
+                },
+                "Wednesday" : {
+                    "pushups": 5,
+                    "plank" : "1:45",
+                    "jump squats": 16
+                },
+                "Thursday" : {
+                    "pushups": 5,
+                    "leg raises" : 20,
+                    "side lunges": 32
+                },
+                "Friday" : {
+                    "pushups": 5,
+                    "mountain climbers" : 20,
+                    "sumo squats": 32
+                },
+                "Weekend" : {
+                    "pushups": 5,
+                    "russian twists" : 20,
+                    "wall-sit": "2:15"
+                },
+        },
+
+        "weekFive" : {
+            "Monday" : {
                 "pushups": 5,
                 "walking planks" : 25,
                 "squats": 40
             },
-            Tuesday = {
+            "Tuesday" : {
                 "pushups": 5,
                 "reverse crunch" : 25,
                 "lunges": 40
             },
-            Wednesday = {
+            "Wednesday" : {
                 "pushups": 5,
                 "plank" : "2:00",
                 "jump squats": 20
             },
-            Thursday = {
+            "Thursday" : {
                 "pushups": 5,
                 "leg raises" : 25,
                 "side lunges": 40
             },
-            Friday = {
+            "Friday" : {
                 "pushups": 5,
                 "mountain climbers" : 25,
                 "sumo squats": 40
             },
-            Weekend = {
+            "Weekend" : {
                 "pushups": 5,
                 "russian twists" : 25,
                 "wall-sit": "2:30"
             },
-        ],
-    ]
+        },
+  }
 
-if ((day === "Sunday") || (day ==="Saturday")){
-    day = "Weekend"
-}else{
-    day = moment().format('dddd');
-}
+    
+    if ((day === "Sunday") || (day ==="Saturday")){
+        day = "Weekend"
+    }else{
+        day = moment().format('dddd');
+    }
+    console.log(day)
 
 
 whichWeek(date)
@@ -227,6 +229,18 @@ console.log(date)
     }
 
 }
+
+
+//Card Display
+var todaysToDo = challenges[dbRef][day]
+
+for (var property in todaysToDo){
+    $(".todaysStuff").append("<p>" + property + " : " + todaysToDo[property] + "</p>")
+}
+
+$(".card-title").text(week + ": " + day)
+
+$(".card-header").text("Today is: " + moment(date).format("DD-MMM"))
 
 $(".logID").on("click", function(){
     user = $(this).attr("id");
@@ -389,7 +403,7 @@ database.ref().on("value", function(snapshot){
     $("#SooWeekFiveWeekend").html("Soo  " + trueFalse(snapshot.val().weekFive.Weekend.Soo))
 
 
-console.log($(".class").val())
+
     function trueFalse(ref) {
         
         if(ref == true){
@@ -670,4 +684,9 @@ for (var i = 0; i < days.length; i++){
 
 $(header).append(newRowW5)
 $(".roundTwo").append(header)
+
+
+
+
 })
+
