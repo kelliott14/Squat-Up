@@ -28,7 +28,7 @@ $(document).ready(function() {
       "weekOne" : {
                 "Monday" : {
                     "pushups": 5,
-                    "walking planks" : 5,
+                    "walking planks" : 4,
                     "squats": 8
                 },
                 "Tuesday" : {
@@ -61,7 +61,7 @@ $(document).ready(function() {
       "weekTwo" : {
                 "Monday" : {
                     "pushups": 5,
-                    "walking planks" : 10,
+                    "walking planks" : 8,
                     "squats": 16
                 },
                 "Tuesday" : {
@@ -94,7 +94,7 @@ $(document).ready(function() {
         "weekThree" : {
                 "Monday" : {
                     "pushups": 5,
-                    "walking planks" : 15,
+                    "walking planks" : 12,
                     "squats": 24
                 },
                 "Tuesday" : {
@@ -127,7 +127,7 @@ $(document).ready(function() {
         "weekFour" : {
                 "Monday" : {
                     "pushups": 5,
-                    "walking planks" : 20,
+                    "walking planks" : 16,
                     "squats": 32
                 },
                 "Tuesday" : {
@@ -160,7 +160,7 @@ $(document).ready(function() {
         "weekFive" : {
             "Monday" : {
                 "pushups": 5,
-                "walking planks" : 25,
+                "walking planks" : 20,
                 "squats": 40
             },
             "Tuesday" : {
